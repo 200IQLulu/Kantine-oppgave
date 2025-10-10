@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}Kantine{% endblock %}</title>
+
+</head>
+<body>
+    <nav>
+        <a href="/about">om</a>
+        <a href="/base">hoved</a>
+        <a href="/contact">kontakt</a>
+    </nav>
+    <header>
+        <h1>Meny</h1>
+        <nav>
+            <a>Home</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>© 2025 akademiet</p>
+    </footer>
+</body>
+</html>
