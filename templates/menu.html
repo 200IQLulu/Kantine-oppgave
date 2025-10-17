@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Ukesmeny - Kantine{% endblock %}
+
+{% block content %}
+  <h2>Ukesmeny</h2>
+  <p>Her finner du ukens meny i kantinen.</p>
+
+  <section class="menu-grid">
+    {% for item in weekly_menu %}
+    <article class="menu-card">
+      <div class="menu-card-media">
+        <img src="{{ item.bilde }}" alt="{{ item.rett }}" loading="lazy">
+      </div>
+      <div class="menu-card-body">
+        <h4 class="menu-day">{{ item.dag }}</h4>
+        <p class="menu-dish">{{ item.rett }}</p>
+        <p class="menu-price">{{ item.pris }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </section>
+{% endblock %}
