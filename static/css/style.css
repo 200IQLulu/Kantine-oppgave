@@ -5,48 +5,240 @@
     box-sizing: border-box;
 }
 
+/* Theme tokens */
+:root {
+    --brand: #004080;
+    --brand-600: #003566;
+    --bg: #f5f7fb;
+    --text: #222222;
+    --muted: #6b7280;
+    --surface: #ffffff;
+    --ring: rgba(0, 64, 128, 0.28);
+    --shadow: 0 2px 8px rgba(0,0,0,0.06);
+    --radius: 8px;
+}
+
 /* Body styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
     padding: 20px;
 }
 
 /* Header */
 header {
-    background-color: #004080;
+    background-color: var(--brand);
     color: white;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 18px 20px;
+    margin-bottom: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
 }
 
 header h1 {
-    margin-bottom: 10px;
+    margin: 0;
+    font-size: 1.6em;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 26px;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin: 0;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin-right: 15px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    font-weight: 600;
+    position: relative;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0.14);
+    transform: translateY(-1px);
+}
+
+nav a:active {
+    transform: translateY(0);
+}
+
+/* Active page indicator */
+nav a.active {
+    background-color: rgba(255, 255, 255, 0.22);
 }
 
 /* Main content */
 main {
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
+    background: var(--surface);
+    padding: 22px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(135deg, rgba(0,64,128,0.08), rgba(0,64,128,0.02));
+    border: 1px solid rgba(0,64,128,0.08);
+    border-radius: var(--radius);
+    padding: 28px;
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 6px;
+}
+
+.hero p {
+    color: var(--muted);
+}
+
+/* (gallery removed) */
+
+/* (old menu table removed) */
+
+/* Menu cards */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.menu-card {
+    background: var(--surface);
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: 1 / 1; /* make square */
+}
+
+.menu-card-media { flex: 1; min-height: 0; }
+
+.menu-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* ensure no inline gaps and consistent sizing */
+}
+
+.menu-card-body {
+    padding: 12px;
+    background: var(--surface);
+    border-top: 1px solid rgba(0,0,0,0.06);
+    min-height: 88px;
+}
+
+.menu-day {
+    margin-bottom: 4px;
+    font-weight: 700;
+}
+
+.menu-dish {
+    color: var(--muted);
+    margin-bottom: 6px;
+}
+
+.menu-price {
+    font-weight: 700;
+}
+
+@media (max-width: 900px) {
+    .menu-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 520px) {
+    .menu-grid { grid-template-columns: 1fr; }
 }
 
 /* Footer */
 footer {
     text-align: center;
     margin-top: 40px;
-    font-size: 0.9em;
-    color: #777;
+    font-size: 0.95em;
+    color: var(--muted);
+}
+
+/* (form styles removed) */
+
+/* Faste varer */
+.product-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+    display: grid;
+    gap: 10px;
+}
+
+.product-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--surface);
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 8px;
+    padding: 10px 12px;
+    box-shadow: var(--shadow);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav a {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+    
+    body {
+        padding: 10px;
+    }
+    
+    main {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+    
+    nav ul {
+        gap: 10px;
+    }
+    
+    nav a {
+        padding: 6px 10px;
+        font-size: 0.85em;
+    }
 }
