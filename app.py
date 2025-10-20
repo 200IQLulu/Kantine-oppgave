@@ -11,11 +11,11 @@ def index():
 def om():
     # Statisk side med faste varer og priser
     omen = [
-        { "produkt": "Brødskive med ost", "pris": "25 kr"},
-        { "produkt": "Brødskive med skinke", "pris": "25 kr"},
-        { "produkt": "Fruktbeger", "pris": "20 kr"},
-        { "produkt": "Kaffe", "pris": "15 kr"},
-        { "produkt": "Juice", "pris": "20 kr"},
+        { "produkt": "Brødskive med ost", "pris": "25 kr", "bilde": "/static/images/ost.webp"},
+        { "produkt": "Brødskive med skinke", "pris": "25 kr", "bilde": "/static/images/skinke.jpg"},
+        { "produkt": "Fruktbeger", "pris": "20 kr", "bilde": "/static/images/fruktbeger.jpg"},
+        { "produkt": "Kaffe", "pris": "15 kr", "bilde": "/static/images/kaffe.webp"},
+        { "produkt": "Juice", "pris": "20 kr", "bilde": "/static/images/juice.webp"},
     ]
     return render_template("about.html", omen=omen)
 
@@ -32,11 +32,11 @@ def kontakt():
 def ukesmeny():
     # Data som sendes inn i Jinja2-malen menu.html
     weekly_menu = [
-        {"dag": "Mandag", "rett": "Kyllingsalat", "pris": "49 kr", "bilde": "/static/images/IMG_9941.jpg"},
-        {"dag": "Tirsdag", "rett": "Pasta Bolognese", "pris": "59 kr", "bilde": "/static/images/rask-pasta-bolognese-1200-720.gif"},
-        {"dag": "Onsdag", "rett": "Vegetar wok", "pris": "45 kr", "bilde": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=1200&auto=format&fit=crop"},
-        {"dag": "Torsdag", "rett": "Fiskeboller i hvit saus", "pris": "65 kr", "bilde": "/static/images/hjemmelagde-fiskeboller.jpeg"},
-        {"dag": "Fredag", "rett": "Taco buffet", "pris": "79 kr", "bilde": "/static/images/assets.brandplatform.generalmills.com---media-project-gmi-oldelpaso-oldelpaso-us-recipes-qtcu578og0gukdk_kb_rmg_gmi_hi_res_jpeg.jpeg%3F.jpeg"},
+        {"dag": "Mandag", "rett": "Kyllingsalat", "pris": "49 kr", "bilde": "/static/images/Kylling.jpg"},
+        {"dag": "Tirsdag", "rett": "Pasta Bolognese", "pris": "59 kr", "bilde": "/static/images/pasta.gif"},
+        {"dag": "Onsdag", "rett": "Vegetar wok", "pris": "45 kr", "bilde": "/static/images/wok.avif"},
+        {"dag": "Torsdag", "rett": "Fiskeboller i hvit saus", "pris": "65 kr", "bilde": "/static/images/fiskeboller.jpeg"},
+        {"dag": "Fredag", "rett": "Taco buffet", "pris": "79 kr", "bilde": "/static/images/taco.jpeg"},
     ]
     return render_template("menu.html", weekly_menu=weekly_menu)
 
