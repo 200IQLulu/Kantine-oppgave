@@ -1,14 +1,26 @@
 {% extends "base.html" %}
 
+{# Tittelblokk som settes inn i base.html #}
 {% block title %}Home Page{% endblock %}
 
+{# Hovedinnhold for forsiden #}
 {% block content %}
   <section class="hero">
     <div class="hero-text">
       <h2>Velkommen til kantinen</h2>
-      <p>God og fersk mat – hver eneste dag.</p>
+      <p>Vi gleder oss til å servere deg god og fersk mat - hver eneste dag.</p>
     </div>
   </section>
 
+  {# Åpningstider flyttet hit fra kontaktsiden #}
+  <section class="opening-hours">
+    <h3>Åpningstider</h3>
+    <ul>
+      <li>Mandag - Fredag: 08:00 - 16:00</li>
+      <li>Lørdag: 10:00 - 14:00</li>
+      <li>Søndag: Stengt</li>
+    </ul>
+  </section>
+ 
   
 {% endblock %}
