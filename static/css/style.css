@@ -10,8 +10,8 @@
     --brand: #004080;
     --brand-600: #003566;
     --bg: #f5f7fb;
-    --text: #222222;
-    --muted: #6b7280;
+    --text: #000000;
+    --muted: #323232;
     --surface: #ffffff;
     --ring: rgba(0, 64, 128, 0.28);
     --shadow: 0 2px 8px rgba(0,0,0,0.06);
@@ -30,7 +30,7 @@ body {
 /* Header */
 header {
     background-color: var(--brand);
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 18px 20px;
     margin-bottom: 18px;
     display: flex;
@@ -155,7 +155,15 @@ main {
 
 .menu-dish {
     color: var(--muted);
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.menu-description {
+    color: var(--muted);
+    font-size: 0.9em;
     margin-bottom: 6px;
+    line-height: 1.4;
 }
 
 .menu-price {
@@ -242,3 +250,38 @@ footer {
         font-size: 0.85em;
     }
 }
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 400px; /* justér som du ønsker */
+    overflow: hidden;
+  }
+  
+  .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+    text-align: center;
+  }
+  
+
+  .hero-text h2 {
+    font-family: 'italic', sans-serif;
+    font-weight: 700;
+  }
+  
+  .hero-text p {
+    font-family: 'italic', sans-serif;
+    font-weight: 300;
+    color: #fff;
+  }
+  

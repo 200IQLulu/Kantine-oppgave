@@ -6,11 +6,13 @@
 {# Hovedinnhold for forsiden #}
 {% block content %}
   <section class="hero">
+    <img class="hero-img" src="{{ url_for('static', filename='images/Startside.jpeg') }}" alt="Kantine">
     <div class="hero-text">
       <h2>Velkommen til kantinen</h2>
       <p>Vi gleder oss til å servere deg god og fersk mat - hver eneste dag.</p>
     </div>
   </section>
+  
 
   {# Åpningstider flyttet hit fra kontaktsiden #}
   <section class="opening-hours">
