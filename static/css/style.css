@@ -1,11 +1,11 @@
-/* Reset some default styles */
+/* Resetter til default styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Theme tokens */
+/* Farger */
 :root {
     --brand: #004080;
     --brand-600: #003566;
@@ -18,7 +18,7 @@
     --radius: 8px;
 }
 
-/* Body styling */
+/* Putter border rundt alt og fikser skrift */
 body {
     font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     background-color: var(--bg);
@@ -40,13 +40,12 @@ header {
 }
 
 header h1 {
-    margin: 0;
     font-size: 1.6em;
     font-weight: 700;
     letter-spacing: 0.2px;
 }
 
-/* Navigation */
+/* Navigasjons baren */
 nav ul {
     list-style: none;
     display: flex;
@@ -55,10 +54,7 @@ nav ul {
     padding: 0;
 }
 
-nav li {
-    margin: 0;
-}
-
+/* Får lenkene til å se ut som knapper */
 nav a {
     color: white;
     text-decoration: none;
@@ -78,26 +74,16 @@ nav a:active {
     transform: translateY(0);
 }
 
-/* Active page indicator */
+/* Viser hvilken side du er på */
 nav a.active {
     background-color: rgba(255, 255, 255, 0.22);
 }
 
-/* Main content */
+/* Hovedinnholdet */
 main {
-    background: var(--surface);
     padding: 22px;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-}
-
-/* Hero */
-.hero {
-    background: linear-gradient(135deg, rgba(0,64,128,0.08), rgba(0,64,128,0.02));
-    border: 1px solid rgba(0,64,128,0.08);
-    border-radius: var(--radius);
-    padding: 28px;
-    margin-bottom: 20px;
 }
 
 .hero h2 {
@@ -105,15 +91,7 @@ main {
     margin-bottom: 6px;
 }
 
-.hero p {
-    color: var(--muted);
-}
-
-/* (gallery removed) */
-
-/* (old menu table removed) */
-
-/* Menu cards */
+/* Meny kort */
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -122,7 +100,6 @@ main {
 }
 
 .menu-card {
-    background: var(--surface);
     border: 1px solid rgba(0,0,0,0.06);
     border-radius: 12px;
     box-shadow: var(--shadow);
@@ -160,7 +137,6 @@ main {
 }
 
 .menu-description {
-    color: var(--muted);
     font-size: 0.9em;
     margin-bottom: 6px;
     line-height: 1.4;
@@ -170,23 +146,15 @@ main {
     font-weight: 700;
 }
 
-@media (max-width: 900px) {
-    .menu-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 520px) {
-    .menu-grid { grid-template-columns: 1fr; }
-}
 
 /* Footer */
 footer {
     text-align: center;
     margin-top: 40px;
     font-size: 0.95em;
-    color: var(--muted);
 }
 
-/* (form styles removed) */
+
 
 /* Faste varer */
 .product-list {
@@ -208,53 +176,12 @@ footer {
     box-shadow: var(--shadow);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-    
-    nav ul {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    nav a {
-        padding: 8px 12px;
-        font-size: 0.9em;
-    }
-    
-    body {
-        padding: 10px;
-    }
-    
-    main {
-        padding: 15px;
-    }
-}
 
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.5em;
-    }
-    
-    nav ul {
-        gap: 10px;
-    }
-    
-    nav a {
-        padding: 6px 10px;
-        font-size: 0.85em;
-    }
-}
 
 .hero {
     position: relative;
     width: 100%;
-    height: 400px; /* justér som du ønsker */
+    height: 400px; /* juster høyden på bildet */
     overflow: hidden;
   }
   
